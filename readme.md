@@ -4,6 +4,14 @@
 
 Experiments mainly.
 
+## Cake Version ##
+
+1.3
+
+## Dependencies ##
+
+?
+
 ## License ##
 
 NONE
