@@ -116,7 +116,16 @@ class MatrixLibCase extends CakeTestCase {
 		);
 		$this->Matrix->set($array);
 		$is = $this->Matrix->isSymmetric();
-		$this->assertTrue($is);	
+		$this->assertTrue($is);
+		
+		$array = array(
+			array(2, 6),
+			array(4, 1)
+		);
+		$this->Matrix->set($array);
+		$is = $this->Matrix->isSymmetric();
+		$this->assertFalse($is);
+					
 	}
 	
 	function testSkeySym() {
@@ -226,4 +235,4 @@ class MatrixLibCase extends CakeTestCase {
 /** End **/
 
 }
-?>
+

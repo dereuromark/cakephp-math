@@ -71,6 +71,4 @@ for ($i=0; $i<count(QSort::$array); $i++){
 }
 // fim chamada do metodo
 
-?>
-
 

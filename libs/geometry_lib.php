@@ -26,7 +26,7 @@ class GeometryLib {
 	 * 2010-09-27 ms
 	 */
 	function distance($x1, $y1, $x2, $y2) {
-		return $this->pythagoras($x1 - $x2, $y2 - $y1);
+		return $this->pythagoras($x2 - $x1, $y2 - $y1);
 	}
 
 	/**
@@ -53,7 +53,7 @@ class GeometryLib {
 		return atan($this->slope($x1, $y1, $x2, $y2));
 	}
 	
-	function circumferenceOfCirlce($radius) {
+	function circumferenceOfCircle($radius) {
 		return 2 * M_PI * $radius;
 	}
 	
@@ -83,6 +83,7 @@ class GeometryLib {
 	 * @return float $area
 	 */
 	function areaOfTriangle($a, $b, $c) {
+		//TODO: return false if invalid triangle!
 		$height = $this->heightOfTriangle($a, $b, $c, 'a');
 		return 0.5 * $a * $height;
 	}
@@ -139,4 +140,4 @@ class GeometryLib {
 		
 }
 
-?>
+

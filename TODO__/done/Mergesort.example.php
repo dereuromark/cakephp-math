@@ -13,4 +13,4 @@ echo "\n";
 $M->Merge_sort($array,0,count($array)-1);
 for($i=0;$i<count($array);$i++)
 		echo $array[$i]."\n";
-?>
+

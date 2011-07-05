@@ -48,4 +48,4 @@ $min_cost = $k->calculateMinimumCost();
 print_arcs('base graph ', $arcs, count($arcs));
 print_arcs("minimal spanning tree, cost $min_cost", $min_arcs, count($min_arcs));
 
-?>
+

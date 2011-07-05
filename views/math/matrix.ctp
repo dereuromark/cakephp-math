@@ -13,7 +13,7 @@
 <?php
 	for ($i = 0; $i < $matrix['m']; $i++) {
 		for ($j = 0; $j < $matrix['n']; $j++) {
-			echo $this->Form->text('Form.'.$i.'.'.$j);
+			echo $this->Form->text('Form.'.$i.'.'.$j, array('class'=>'matrix', 'style'=>'width: 80px; margin-right:2px;', 'maxlength'=>'12'));
 		}
 		echo BR;
 		
@@ -27,7 +27,9 @@
 <?php echo $this->Form->end(__('Submit',true));?>
 </div>
 
-<br /><br />
+<br />
+Hinweis: Leere Felder zählen als 0. Dezimaltrennzeichen ist der Punkt (kein Komma!).
+
 
 <h3>Result</h3>
 <?php

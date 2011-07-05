@@ -219,8 +219,4 @@ for ($i = 1; $i <= 5; $i++) {
 
 print "<br><b>Search 'Zoo':</b> " . $Test->Search("Zoo");
 
-?>
-
-
-
 

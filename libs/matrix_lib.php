@@ -44,6 +44,33 @@ class MatrixLib {
 	}
 	
 	/**
+   * Returns the Euclidean norm of the matrix.
+   * Euclidean norm = sqrt( sum( e[i][j]^2 ) )
+   * 2010-10-19 ms
+   */
+	function norm() {
+		//TODO
+	}
+	
+	
+	function swapRows($i, $j) {
+		
+	}
+	
+	function swapCols($i, $j) {
+		
+	}
+	
+	function getMinimum($i = null, $j = null) {
+		
+	}
+	
+	function getMaximum($i = null, $j = null) {
+		
+	}
+	
+	
+	/**
 	 * M^T
 	 */
 	function transpose() {
@@ -390,6 +417,42 @@ end while
 		return $array;
 	}
 	
+	/**
+   * Returns the diagonal of a square matrix as a vector array
+   * @return array
+   * 2010-10-19 ms
+   */
+	function getDiagonal() {
+		$vals = array();
+		$n = count($this->matrix);
+		for ($i=0; $i<$n; $i++) {
+			$vals[$i] = $this->matrix[$i][$i];
+		}
+		return $vals;
+	}
+	
+	/**
+   * Returns a simple string representation of the matrix
+   *
+   * @param optional string $format a sprintf() format used to print the matrix elements (default = '%6.2f')
+   * @return string|PEAR_Error a string on success, PEAR_Error otherwise
+   */
+	function toString ($format='%6.2f') {	
+    $out = "";
+    for ($i=0; $i < count($this->matrix); $i++) {
+        for ($j=0; $j < count($this->matrix[0]); $j++) {
+            // remove the -0.0 output
+            $entry =  $this->_data[$i][$j];
+            if (sprintf('%2.1f',$entry) == '-0.0') {
+                $entry = 0;
+            }
+            $out .= sprintf($format, $entry);
+        }
+        $out .= "\n";
+    }
+    return $out;
+	}
+	
 
 	/**
 	 * @return array: 0=>M, 1=>N
@@ -415,6 +478,7 @@ end while
 	}
 
 	/**
+	 * scale array
 	 * float value or second matrix
 	 * @return bool $success
 	 * 2010-09-15 ms
@@ -442,6 +506,23 @@ end while
 		}
 		return true;
 	}
+	
+	/**
+	 * scale a single row of the matrix
+	 * 2010-10-19 ms
+	 */
+	function scaleRow($row, $factor) {
+		
+	}
+
+	/**
+	 * scale a single column of the matrix
+	 * 2010-10-19 ms
+	 */
+	function scaleColumn($column, $factor) {
+		
+	}
+
 	
 	/**
 	 * float value
@@ -488,6 +569,57 @@ end while
 		return true;
 	}
 
+	
+	/**
+	 * Multiplies a vector by this matrix
+	 * 
+	 * @param array
+	 * 2010-10-19 ms
+	 */
+	function vectorMultiply($v1, $matrix = null) {
+		if ($matrix === null) {
+			$matrix = $this->matrix;
+		}
+		
+		//TODO
+		
+		return $v1;
+	}
+	
+ /**
+   * Solves a system of linear equations: Ax = b
+   *
+   * A system such as:
+   * <pre>
+   *     a11*x1 + a12*x2 + ... + a1n*xn = b1
+   *     a21*x1 + a22*x2 + ... + a2n*xn = b2
+   *     ...
+   *     ak1*x1 + ak2*x2 + ... + akn*xn = bk
+   * </pre>
+   * can be rewritten as:
+   * <pre>
+   *     Ax = b
+   * </pre>
+   * where:
+   * - A is matrix of coefficients (aij, i=1..k, j=1..n),
+   * - b a vector of values (bi, i=1..k),
+   * - x the vector of unkowns (xi, i=1..n)
+   * Using: x = (Ainv)*b
+   * where:
+   * - Ainv is the inverse of A
+   *
+   * @param object Math_Matrix $a the matrix of coefficients
+   * @param object Math_Vector $b the vector of values
+   * @return object Math_Vector|PEAR_Error a Math_Vector object on succcess
+   * @see vectorMultiply()
+   */
+  function solve($b, $a = null) {
+  	if ($a === null) {
+  		$a = $this->matrix;
+  	}
+  	return $this->vectorMultiply($b, $a);
+	}
+	
 
 	function permanent() {
 		list($m, $n) = $this->dimension();
@@ -514,6 +646,17 @@ end while
 		
 		return false;
 	}
+
+
+	/**
+   * Returns the normalized determinant = abs(determinant)/(euclidean norm)
+   *
+   * @return number
+   */
+	function normalizedDeterminant() {
+	
+	}
+	
 
 	/**
 	 * only defined for MxN with N=M!
@@ -643,4 +786,4 @@ end while
 } //end class
 
 
-?>
+
