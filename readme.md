@@ -1,4 +1,4 @@
-# Math plugin for CakePHP #
+# Math Plugin for CakePHP #
 
 ## Just some fun stuff ##
 
@@ -6,11 +6,11 @@ Experiments mainly.
 
 ## Cake Version ##
 
-1.3
+1.3 (deprecated as of now - use 2.0 branch instead)
 
 ## Dependencies ##
 
-?
+none
 
 ## License ##
 
