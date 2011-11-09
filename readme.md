@@ -1,16 +1,16 @@
-# Math plugin for CakePHP #
+# Math Plugin for CakePHP #
 
 ## Just some fun stuff ##
 
-Experiments mainly.
+Experiments mainly. Feel free to contribute.
 
 ## Cake Version ##
 
-1.3
+2.0
 
 ## Dependencies ##
 
-?
+none
 
 ## License ##
 
