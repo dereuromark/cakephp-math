@@ -1,0 +1,56 @@
+$Id: CODING,v 1.1 2000/02/28 09:59:56 jmcastagnetto Exp $
+
+If you want to contribute to this project, be sure that you
+follow at least the first 2 or 3 of the following coding practices:
+
+1) Use the K&R style of function definition, e.g.:
+
+function newfunc ( $param1, $param2 ) {
+	$myvar = ($param1 * $param2) * sin($param1/$param2);
+	return $myvar;
+}
+
+2) Code for readability, remember that someone (perhaps you) may
+   modify or add to your code in the future, so try and be consistent
+   with indentations, etc.
+
+3) Try and comment your code, explaining the objective of the
+   code, not the mechanics of it (which should be clear from the
+   code itself). For example:
+
+	// $efact needs to be a valid google factor in order 
+	// to estimate the clustering in the data reliably
+	$t_efact = inverse_google($efact/sin($efact));
+	if ($t_efact >= GOOGLE_MIN && $t_efact <= GOOGLE_MAX) {
+		... etc ...
+	}
+
+4) If you can, you should document your function following a style
+   like the following:
+
+	# start of function sinh
+	/*
+	 * proto: double function sinh ( number )
+	 * Calculates the hyperbolic sine of the parameter
+	 * Returns a double
+	 * -----
+	 */
+	function sinh ($x) {
+	... etc ...
+	}
+	# end of function sinh
+
+The reason for point (4) is because I am making some automatic documentation
+extraction scripts, using awk.
+
+Also the tagging of the functions using "# proto: ..." and "# end of ...",
+will allow the extraction of functions from package files, in case a user
+wants to use only a certain number of functions, and does not want to
+load the whole file, creating then a subset of the functions she needs.
+
+The simple awk scripts are included in the "scripts" directory, along with a
+script that show the usage.
+
+Note: As of today (2000/02/28), the only package that uses the style in
+point (4) is pkg.arith.php; I have not gotten around to update all the other
+files yet.
