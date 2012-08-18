@@ -8,7 +8,7 @@
 <br />
 
 <div class="form">
-<?php echo $this->Form->create('Math', array('url'=>'/'.$this->request->url));?>
+<?php echo $this->Form->create('Math');?>
 
 <?php
 	for ($i = 0; $i < $matrix['m']; $i++) {
@@ -16,7 +16,7 @@
 			echo $this->Form->text('Form.'.$i.'.'.$j, array('class'=>'matrix', 'style'=>'width: 80px; margin-right:2px;', 'maxlength'=>'12'));
 		}
 		echo BR;
-		
+
 	}
 
 ?>

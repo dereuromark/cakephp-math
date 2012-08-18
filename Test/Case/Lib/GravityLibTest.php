@@ -18,23 +18,23 @@ class GravityLibTest extends CakeTestCase {
 	public function testWeight() {
 		echo '<h3>Weight</h3>';
 		$is = $this->Gravity->iWeight(430);
-		$this->assertEqual(round($is, 4), 4216.8595);
+		$this->assertEquals(round($is, 4), 4216.8595);
 
 	}
-	
+
 	public function testGVar() {
 		echo '<h3>GVar</h3>';
 		$is = $this->Gravity->gVariable(0);
-		$this->assertEqual(round($is, 4), round($this->Gravity->g0Constant(),4)); # 0m above ground
-		
+		$this->assertEquals(round($is, 4), round($this->Gravity->g0Constant(),4)); # 0m above ground
+
 		$is = $this->Gravity->gVariable(30);
-		$this->assertEqual(round($is, 4), 9.8057); # 30m above ground
-		
+		$this->assertEquals(round($is, 4), 9.8057); # 30m above ground
+
 		$is = $this->Gravity->gVariable(10000);
-		$this->assertEqual(round($is, 4), 9.5059); # 10km above ground
+		$this->assertEquals(round($is, 4), 9.5059); # 10km above ground
 
 	}
-	
+
 
 /** End **/
 

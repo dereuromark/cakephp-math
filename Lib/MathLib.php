@@ -184,7 +184,7 @@ class MathLib {
 		}
 		return $Result;
 	}
-	
+
 	/**
 	 * @return True if the number is even, false otherwise
 	 * 2010-11-17 ms
@@ -192,7 +192,7 @@ class MathLib {
 	public function isEven($num) {
 		if (($num % 2) === 0) {
 			return true;
-		}	
+		}
 		return false;
 	}
 

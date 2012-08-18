@@ -14,12 +14,12 @@ jQuery(document).ready(function(){
 
 	jQuery("#FormSelect").change(function() {
 		var selvalue = jQuery(this).val();
-		
+
 		var vars = myObj[selvalue];
 		jQuery(".vars").parent('div').hide(100);
 		for (var i = 0; i < vars.length; i++) {
 			var id = vars[i];
-  		jQuery("#Form" + id).parent('div').show(100);
+			jQuery("#Form" + id).parent('div').show(100);
 		}
 
 	}).change();
@@ -41,7 +41,7 @@ div.variables div.input {
 <br />
 
 <div class="form">
-<?php echo $this->Form->create('Math', array('url'=>'/'.$this->request->url));?>
+<?php echo $this->Form->create('Math');?>
 
 <?php
 	echo $this->Form->input('Form.select', array('options'=>$selectOptions));

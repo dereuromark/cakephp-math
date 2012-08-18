@@ -12,27 +12,27 @@ class KruskalLibTest extends CakeTestCase {
 	public function startTest() {
 		//$this->Kruskal = new KruskalLib();
 	}
-	
-	
+
+
 
 /** Start **/
 
 	public function _printArcs($aText,$arcArray,$nArcs) {
 		?>
-		<ul><?=$aText?>, <?=$nArcs?> arcs
-		<?php	
+		<ul><?php echo $aText?>, <?php echo $nArcs?> arcs
+		<?php
 			foreach ($arcArray as $arc => $cost) {
 		?>
-		<li>arc <?=$arc?>, cost <?=$cost?>
+		<li>arc <?php echo $arc?>, cost <?php echo $cost?>
 		<?php
 			}
 		?>
 		</ul>
 		<?php
 	}
-			
-	
-	
+
+
+
 	public function testKruskal() {
 		$arcs = array(
 			"AB" => 17,
@@ -58,11 +58,11 @@ class KruskalLibTest extends CakeTestCase {
 			"NP" => 21,
 			"JP" => 51
 		);
-		
+
 		$k = new KruskalLib($arcs);
 		$min_arcs = $k->findMinimum();
 		$min_cost = $k->calculateMinimumCost();
-		
+
 		$this->_printArcs('base graph ', $arcs, count($arcs));
 		$this->_printArcs("minimal spanning tree, cost $min_cost", $min_arcs, count($min_arcs));
 	}

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  * 2010-07-05 ms
  */
 class GeometryLib {
@@ -19,7 +19,7 @@ class GeometryLib {
 		return (float)sqrt(pow($a, 2) + pow($b, 2));
 	}
 
-	
+
 	/**
 	 * distance between two points (x1, y1) and (x2, y2)
 	 * @link http://en.wikipedia.org/wiki/Analytic_geometry
@@ -43,41 +43,41 @@ class GeometryLib {
 			if ($y2 < $y1) {
 				return -1;
 			}
-			return 0; 
+			return 0;
 		}
 		return ($y2-$y1)/($x2-$x1);
 	}
-	
+
 	//TODO:  not angle right now, but 0..1 - should later be 0..90 or 0..-90
 	public function slopeAngle($x1, $y1, $x2, $y2) {
 		return atan($this->slope($x1, $y1, $x2, $y2));
 	}
-	
+
 	public function circumferenceOfCircle($radius) {
 		return 2 * M_PI * $radius;
 	}
-	
+
 	public function circumferenceOfRectangle($width, $height) {
 		return 2 * ($width + $height);
 	}
-	
+
 	public function circumferenceOfTriangle($a, $b, $c) {
 		return $a + $b + $c;
 	}
-	
+
 	# assuming the triangle is at least isosceled (gleichschenklig)
 	public function circumferenceOfTriangleByHeight($width, $height) {
 		return $width + 2 * $this->pythagoras($width/2, $height);
 	}
-	
+
 	public function areaOfCircle($radius) {
 		return M_PI * pow($radius, 2);
 	}
-	
+
 	public function areaOfRectangle($width, $height) {
 		return $width * $height;
 	}
-	
+
 	/**
 	 * alternative: maybe faster with Heronsche Flaechenformel?
 	 * @return float $area
@@ -87,7 +87,7 @@ class GeometryLib {
 		$height = $this->heightOfTriangle($a, $b, $c, 'a');
 		return 0.5 * $a * $height;
 	}
-	
+
 	/**
 	 * @param width
 	 * @param corresponding height (needs to be orthogonal)
@@ -96,9 +96,9 @@ class GeometryLib {
 	public function areaOfTriangleByHeight($width, $height) {
 		return 0.5 * $width * $height;
 	}
-	
+
 	/**
-	 * @param a, b, c 
+	 * @param a, b, c
 	 * @param null or string a,b,c
 	 * @return return array(a=>,b=>,c=>) or float $specificHeight or false in failure
 	 */
@@ -107,7 +107,7 @@ class GeometryLib {
 			return false;
 		}
 		$basicRoot = sqrt(2*($a^2*$b^2 + $b^2*$c^2 + $c^2*$a^2)-($a^4 + $b^4 + $c^4));
-		
+
 		$ha = $basicRoot / (2*$a);
 		if ($returnHeight == 'a') {
 			return $ha;
@@ -120,10 +120,10 @@ class GeometryLib {
 		if ($returnHeight == 'c') {
 			return $hc;
 		}
-		return array('a'=>$ha, 'b'=>$hb, 'c'=>$hc);	
+		return array('a'=>$ha, 'b'=>$hb, 'c'=>$hc);
 	}
 
-	
+
 	/**
 	 * sum of all angles in an object
 	 * Die Winkelsumme im (nicht überschlagenen) n-Eck ist (n-2)*180°.
@@ -137,7 +137,7 @@ class GeometryLib {
 		//TODO: check überschlagen?
 		return ($corners-2)*180;
 	}
-		
+
 }
 
 

@@ -2,7 +2,7 @@
 
 /**
  * class to Build Dijkstra model
- * To build the class 
+ * To build the class
  * Use int to index all the points on the map
  * @param int startPoint
  * @param array routes[] = array($startPoint,$endPoint,$distance)
@@ -22,9 +22,9 @@ class DijkstraLib {
 	const I = 100000; // define infinite distance
 
 	/**
-	 * Build Dijkstra model, find best path and closest distance from start point to each point on the map 
+	 * Build Dijkstra model, find best path and closest distance from start point to each point on the map
 	 * @return null
-	 * @param object $intStartPoint 
+	 * @param object $intStartPoint
 	 * @param object $aRoutes
 	 */
 	public function __construct($intStartPoint, $aRoutes) {
@@ -63,8 +63,8 @@ class DijkstraLib {
 	}
 
 	/**
-	 * function to get the closest distance	 
-	 * @return 
+	 * function to get the closest distance
+	 * @return
 	 */
 	public function getDistance() {
 		return $this->aDistances;
@@ -72,7 +72,7 @@ class DijkstraLib {
 
 	/**
 	 * Remove specified element from array
-	 * @return array 
+	 * @return array
 	 * @param array $arr : array to be processing
 	 * @param array $value : the element to be remove from the array
 	 */

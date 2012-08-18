@@ -1,14 +1,15 @@
 <?php
 class MathController extends MathAppController {
 
-	
 	public $uses = array();
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		
-		if (isset($this->AuthExt)) {
-			$this->AuthExt->allow('*');
+
+		$this->modelClass = '';
+
+		if (isset($this->Auth)) {
+			$this->Auth->allow('*');
 		}
 	}
 
@@ -28,17 +29,17 @@ class MathController extends MathAppController {
 	public function temperature() {
 		App::import('Lib', 'Tools.TemperatureLib');
 		$temperatureLib = new TemperatureLib();
-		$units = $temperatureLib->get_supported();
+		$units = $temperatureLib->getSupported();
 		$this->set(compact('units'));
 		$result = '';
-		if (!empty($this->request->data)) {
+		if ($this->Common->isPost()) {
 			$temperatureLib->set($this->request->data['Math']['value'], $this->request->data['Math']['unit']);
 			$result = $temperatureLib->get($this->request->data['Math']['targetUnit'], true);
 		}
 
 		$this->set(compact('result'));
 	}
-	
+
 	/**
 	 *
 	 */
@@ -46,8 +47,8 @@ class MathController extends MathAppController {
 		App::import('Lib', 'Math.HalfLifeLib');
 		$HalfLife = new HalfLifeLib();
 		$result = '';
-		if (!empty($this->request->data)) {
-		
+		if ($this->Common->isPost()) {
+
 			switch($this->request->data['Math']['selection']) {
 				case 0:
 					$result = $HalfLife->age($this->request->data['Math']['hlife'], $this->request->data['Math']['pca']);
@@ -86,7 +87,7 @@ class MathController extends MathAppController {
 		);
 
 
-		if (!empty($this->request->data)) {
+		if ($this->Common->isPost()) {
 			App::import('Lib', 'Math.MatrixLib');
 			$matrixLib = new MatrixLib($this->request->data['Form']);
 

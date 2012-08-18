@@ -16,16 +16,16 @@ class HalfLifeLib {
 	 * pca: 95
 	 */
 	public function age($hlife, $pca) {
-		
+
 		if($hlife == 0 || $pca <= 0 || $pca > 100) {
 			return 0;
 		}
-			
+
 		$alpha = $hlife/log(2);
 		$age = $alpha*log(100/$pca);
 		return $age;
-		
-		
+
+
 		//unit = "y";
 			/*
 			if ($age <= 1) {
@@ -42,8 +42,8 @@ class HalfLifeLib {
 				}
 			}
 			*/
-			
-			
+
+
 	}
 
 	/**

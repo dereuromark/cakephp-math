@@ -1,21 +1,21 @@
 <?php
 
 /***********************************************
-* PHP Binary Tree Class / Object (Code)        
-* BTree Sort(Inorder Traversal) and Search     
+* PHP Binary Tree Class / Object (Code)
+* BTree Sort(Inorder Traversal) and Search
 * © CK Leong "BasicA" <basica@k-designs.com.sg>
 ***********************************************
-* Take Note that returned data would be such   
-* that Array elements start from index 1 and   
-* thats because the 0th element or the index   
-* is used in the Algorithm and thus the class  
-* constructor would automatically convert your 
-* Array to start from 1 moving all elements    
+* Take Note that returned data would be such
+* that Array elements start from index 1 and
+* thats because the 0th element or the index
+* is used in the Algorithm and thus the class
+* constructor would automatically convert your
+* Array to start from 1 moving all elements
 * 1-step down. Therefore when you get the array
-* from the class... remember to -1 to the      
-* returned index.                              
+* from the class... remember to -1 to the
+* returned index.
 ***********************************************
-* BasicA                                       
+* BasicA
 */
 
 
@@ -148,6 +148,6 @@ class BtreeLib {
 			$this->SearchIndex = $Root;
 		}
 	}
-	
+
 }
 

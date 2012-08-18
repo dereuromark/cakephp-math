@@ -19,24 +19,24 @@ class FinancialLibTest extends CakeTestCase {
 	public function testArith() {
 		$values = array(1, 5, 9);
 		$is = FinancialLib::arithmeticMean($values);
-		$this->assertEqual($is, 5);
-		
+		$this->assertEquals($is, 5);
+
 		$values = array(-111.5, 5.6, 9.1, 58.1);
 		$is = FinancialLib::arithmeticMean($values);
-		$this->assertEqual(round($is, 3), -9.675);
+		$this->assertEquals(round($is, 3), -9.675);
 	}
 
-	
+
 	public function testGeo() {
 		$values = array(1, 5, 9);
 		$is = FinancialLib::geometricMean($values);
-		$this->assertEqual(round($is, 3), 6.708);
-		
+		$this->assertEquals(round($is, 3), 6.708);
+
 		$values = array(-111.5, 5.6, 9.1, 58.1);
 		$is = FinancialLib::geometricMean($values);
-		$this->assertEqual($is, '');	# why???	
+		$this->assertEquals($is, '');	# why???
 	}
-	
+
 
 /** End **/
 

@@ -14,7 +14,7 @@ class FinancialLib {
 		}
 		return $sum/count($values);
 	}
-	
+
 
 	public function geometricMean($values = array()) {
 		$product = 1;

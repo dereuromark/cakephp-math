@@ -11,7 +11,7 @@ class AllLibTestsTest extends PHPUnit_Framework_TestSuite {
  */
 	public static function suite() {
 		$suite = new CakeTestSuite('All Lib tests');
-    $path = dirname(__FILE__);
+	$path = dirname(__FILE__);
 		$suite->addTestDirectory($path . DS . 'Lib');
 		return $suite;
 	}

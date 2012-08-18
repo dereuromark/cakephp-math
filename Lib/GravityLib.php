@@ -15,7 +15,7 @@
  * 2010-11-05 ms
  */
 class GravityLib {
-	
+
 	/**
 	 * G (Newtonian gravitational constant)
 	 * unit: N m^2/kg^2
@@ -25,7 +25,7 @@ class GravityLib {
 	public function gConstant() {
 		return 6.67 * pow(10, -11);
 	}
-	
+
 	/**
 	 * Newtonian gravitational coupling
 	 * 2010-11-05 ms
@@ -43,7 +43,7 @@ class GravityLib {
 	public function iWeight($m) {
 		return $this->g0Constant() * $m;
 	}
-	
+
 	/**
 	 * g0 (Standard gravity, or standard acceleration due to free fall)
 	 * unit: m/s^2
