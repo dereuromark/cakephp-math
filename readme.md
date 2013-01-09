@@ -6,7 +6,7 @@ Experiments mainly. Feel free to contribute.
 
 ## Cake Version ##
 
-2.0
+2.x
 
 ## Dependencies ##
 

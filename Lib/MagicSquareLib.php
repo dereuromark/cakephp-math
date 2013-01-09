@@ -27,12 +27,24 @@ class MagicSquareLib {
 
 	/**
 	 * Get all possible squares
+	 * Remembers squares by sum of all values in specific order
+	 *
 	 * @return array of arrays
 	 */
 	public function getSquares() {
-
+		//TODO
 	}
 
+	/**
+	 * @return int
+	 */
+	public function getPossibilities() {
+		//TODO
+	}
+
+	/**
+	 * @return array
+	 */
 	protected function _square($n) {
 		$field = array();
 		$row = 0;
@@ -40,11 +52,11 @@ class MagicSquareLib {
 
 		$i = 1;
 
-		// Die Eins kommt immer in die Mitte der ersten $row.
+		// "one" always goes into the middle of the first row.
 		if ($i === 1) {
 			$field[0][$n / 2] = $i;
 		}
-		// Jetzt wird das Array befüllt
+		// now fill the $field array
 		while ($i < $n * $n) {
 			if ($i % $n === 0) {
 				$i++;
@@ -63,6 +75,9 @@ class MagicSquareLib {
 		return $field;
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getMagicConstant() {
 		if ($this->_magicConstant === null) {
 			$this->_magicConstant = self::magicConstant($this->_size);
@@ -108,10 +123,16 @@ class MagicSquareLib {
 		return true;
 	}
 
+	/**
+	 * @return int
+	 */
 	public static function magicConstant($size) {
 		return ($size * (($size * $size) + 1)) / 2;
 	}
 
+	/**
+	 * @return string
+	 */
 	public static function toTable(array $array) {
 		$n = count($array);
 		$res = '<table>';
