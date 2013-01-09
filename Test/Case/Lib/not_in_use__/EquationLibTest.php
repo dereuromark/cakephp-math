@@ -1,7 +1,7 @@
 <?php
 
 App::import('Lib', 'Math.EquationLib');
-App::uses('MyCakeTestCase', 'Tools.Lib');
+App::uses('MyCakeTestCase', 'Tools.TestSuite');
 
 class EquationLibTest extends MyCakeTestCase {
 

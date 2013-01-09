@@ -1,7 +1,7 @@
 <?php
 
 App::import('Lib', 'Math.HalfLifeLib');
-App::uses('MyCakeTestCase', 'Tools.Lib');
+App::uses('MyCakeTestCase', 'Tools.TestSuite');
 
 class HalfLifeLibTest extends MyCakeTestCase {
 

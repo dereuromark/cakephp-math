@@ -1,7 +1,7 @@
 <?php
 
 App::import('Lib', 'Math.PhysicsLib');
-App::uses('MyCakeTestCase', 'Tools.Lib');
+App::uses('MyCakeTestCase', 'Tools.TestSuite');
 
 class PhysicsLibTest extends MyCakeTestCase {
 
