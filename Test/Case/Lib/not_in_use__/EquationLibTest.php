@@ -1,16 +1,14 @@
 <?php
 
-App::import('Lib', 'Math.EquationLib');
+App::uses('EquationLib', 'Math.Lib');
 App::uses('MyCakeTestCase', 'Tools.TestSuite');
 
 class EquationLibTest extends MyCakeTestCase {
 
 	public function setUp() {
 		$this->EquationLib = new EquationLib();
-	}
 
-	public function tearDown() {
-
+		parent::setUp();
 	}
 
 	public function testObject() {
