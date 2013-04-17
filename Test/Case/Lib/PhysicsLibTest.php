@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.PhysicsLib');
+App::uses('PhysicsLib', 'Math.Lib');
 App::uses('MyCakeTestCase', 'Tools.TestSuite');
 
 class PhysicsLibTest extends MyCakeTestCase {
@@ -14,7 +14,7 @@ class PhysicsLibTest extends MyCakeTestCase {
 	}
 
 	public function testObject() {
-		$this->assertTrue(is_a($this->PhysicsLib, 'PhysicsLib'));
+		$this->assertInstanceOf('PhysicsLib', $this->PhysicsLib);
 	}
 
 	public function testX() {

@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.SortLib');
+App::uses('SortLib', 'Math.Lib');
 
 /**
  * testing
@@ -9,7 +9,7 @@ App::import('Lib', 'Math.SortLib');
 class SortLibTest extends CakeTestCase {
 	public $Sort = null;
 
-	public function startTest() {
+	public function setUp() {
 		$this->Sort = new SortLib();
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.XBaseLib');
+App::uses('XBaseLib', 'Math.Lib');
 
 /**
  * testing
@@ -9,7 +9,7 @@ App::import('Lib', 'Math.XBaseLib');
 class XBaseLibTest extends CakeTestCase {
 	public $XBase = null;
 
-	public function startTest() {
+	public function setUp() {
 		//$this->XBase = new XBaseLib();
 	}
 

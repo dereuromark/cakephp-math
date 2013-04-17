@@ -613,7 +613,7 @@ end while
 	 * @return object Math_Vector|PEAR_Error a Math_Vector object on succcess
 	 * @see vectorMultiply()
 	 */
-	function solve($b, $a = null) {
+	public function solve($b, $a = null) {
 		if ($a === null) {
 			$a = $this->matrix;
 		}

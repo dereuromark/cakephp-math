@@ -2,4 +2,3 @@
 class MathAppModel extends AppModel {
 
 }
-

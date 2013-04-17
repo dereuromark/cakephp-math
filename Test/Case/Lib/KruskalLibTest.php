@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.KruskalLib');
+App::uses('KruskalLib', 'Math.Lib');
 
 /**
  * testing
@@ -9,7 +9,7 @@ App::import('Lib', 'Math.KruskalLib');
 class KruskalLibTest extends CakeTestCase {
 	public $Kruskal = null;
 
-	public function startTest() {
+	public function setUp() {
 		//$this->Kruskal = new KruskalLib();
 	}
 

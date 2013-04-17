@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.BtreeLib');
+App::uses('BtreeLib', 'Math.Lib');
 
 /**
  * testing
@@ -9,7 +9,7 @@ App::import('Lib', 'Math.BtreeLib');
 class BtreeLibTest extends CakeTestCase {
 	//public $Btree = null;
 
-	public function startTest() {
+	public function setUp() {
 
 	}
 

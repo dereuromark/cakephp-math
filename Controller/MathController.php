@@ -6,13 +6,10 @@ class MathController extends MathAppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 
-		$this->modelClass = '';
-
 		if (isset($this->Auth)) {
-			$this->Auth->allow('*');
+			$this->Auth->allow();
 		}
 	}
-
 
 
 /****************************************************************************************
@@ -27,12 +24,12 @@ class MathController extends MathAppController {
 	 * calculating and transforming temperatures
 	 */
 	public function temperature() {
-		App::import('Lib', 'Tools.TemperatureLib');
+		App::uses('TemperatureLib', 'Tools.Lib');
 		$temperatureLib = new TemperatureLib();
 		$units = $temperatureLib->getSupported();
 		$this->set(compact('units'));
 		$result = '';
-		if ($this->Common->isPost()) {
+		if ($this->Common->isPosted()) {
 			$temperatureLib->set($this->request->data['Math']['value'], $this->request->data['Math']['unit']);
 			$result = $temperatureLib->get($this->request->data['Math']['targetUnit'], true);
 		}
@@ -44,10 +41,10 @@ class MathController extends MathAppController {
 	 *
 	 */
 	public function half_life() {
-		App::import('Lib', 'Math.HalfLifeLib');
+		App::uses('HalfLifeLib', 'Math.Lib');
 		$HalfLife = new HalfLifeLib();
 		$result = '';
-		if ($this->Common->isPost()) {
+		if ($this->Common->isPosted()) {
 
 			switch($this->request->data['Math']['selection']) {
 				case 0:
@@ -86,9 +83,8 @@ class MathController extends MathAppController {
 			'n' => $n
 		);
 
-
-		if ($this->Common->isPost()) {
-			App::import('Lib', 'Math.MatrixLib');
+		if ($this->Common->isPosted()) {
+			App::uses('MatrixLib', 'Math.Lib');
 			$matrixLib = new MatrixLib($this->request->data['Form']);
 
 			$matrix['determant'] = $matrixLib->determinant();
@@ -103,9 +99,7 @@ class MathController extends MathAppController {
 			$matrix['row_echelon'] = $matrixLib->isRowEchelonForm();
 			$matrix['reduced_row_echelon'] = $matrixLib->isReducedRowEchelonForm();
 			$matrix['reduced_row_echelon_matrix'] = $matrixLib->reducedRowEchelonForm();
-
 		}
-
 
 		$this->set(compact('matrix'));
 		$this->Session->write('Matrix', $matrix);
@@ -124,7 +118,7 @@ class MathController extends MathAppController {
 		);
 
 		if (!empty($this->request->data['Form']['select']) && array_key_exists($this->request->data['Form']['select'], $selectOptions)) {
-			App::import('Lib', 'Math.GeometryLib');
+			App::uses('GeometryLib', 'Math.Lib');
 			$geoLib = new GeometryLib();
 			$params = $this->_clean($this->request->data['Form']);
 			switch ($this->request->data['Form']['select']) {
@@ -156,7 +150,6 @@ class MathController extends MathAppController {
 					$result = $geoLib->areaOfTriangle($params['a'], $params['b'], $params['c']);
 					break;
 			}
-
 		}
 
 		$this->set(compact('result', 'selectOptions'));
@@ -167,8 +160,8 @@ class MathController extends MathAppController {
  * protected/interal functions
  ****************************************************************************************/
 
-	public function _clean($array) {
-		App::import('Lib', 'Math.MatrixLib');
+	protected function _clean($array) {
+		App::uses('MatrixLib', 'Math.Lib');
 		$matrixLib = new MatrixLib();
 		return $matrixLib->clean($array);
 	}

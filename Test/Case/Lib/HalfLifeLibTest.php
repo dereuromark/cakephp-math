@@ -1,13 +1,13 @@
 <?php
 
-App::import('Lib', 'Math.HalfLifeLib');
+App::uses('HalfLifeLib', 'Math.Lib');
 App::uses('MyCakeTestCase', 'Tools.TestSuite');
 
 class HalfLifeLibTest extends MyCakeTestCase {
 
 	public $HalfLife = null;
 
-	public function startTest() {
+	public function setUp() {
 		$this->HalfLife = new HalfLifeLib();
 	}
 

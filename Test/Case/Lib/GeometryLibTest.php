@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.GeometryLib');
+App::uses('GeometryLib', 'Math.Lib');
 
 /**
  * testing
@@ -8,7 +8,7 @@ App::import('Lib', 'Math.GeometryLib');
  */
 class GeometryLibTest extends CakeTestCase {
 
-	public function startTest() {
+	public function setUp() {
 		$this->Geometry = new GeometryLib();
 
 	}

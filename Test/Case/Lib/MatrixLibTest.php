@@ -1,12 +1,13 @@
 <?php
 
-App::import('Lib', 'Math.MatrixLib');
+App::uses('MatrixLib', 'Math.Lib');
 
 /**
  * testing
  * 2009-07-15 ms
  */
 class MatrixLibTest extends CakeTestCase {
+
 	public $Matrix = null;
 
 	public $examples5x5 = array(
@@ -49,17 +50,12 @@ class MatrixLibTest extends CakeTestCase {
 		array(2)
 	);
 
-	public function startTest() {
-		//$this->Matrix = new MatrixLib($this->examples);
-	}
-
-
 	public function setUp() {
+		//$this->Matrix = new MatrixLib($this->examples);
 		$this->Matrix = new MatrixLib($this->examples3x3);
+
+		parent::setUp();
 	}
-
-
-/** Start **/
 
 	public function testClean() {
 		$is = $this->Matrix->clean($this->examples3x3);
@@ -73,7 +69,6 @@ class MatrixLibTest extends CakeTestCase {
 		//pr($is);
 		$this->assertEquals($is, $a2);
 	}
-
 
 	public function testDim() {
 		$is = $this->Matrix->dimension();
@@ -107,7 +102,6 @@ class MatrixLibTest extends CakeTestCase {
 		);
 		$this->assertEquals($is, $expected);
 	}
-
 
 	public function testSym() {
 		$array = array(
@@ -165,7 +159,6 @@ class MatrixLibTest extends CakeTestCase {
 		);
 		$this->assertEquals($is, $expected);
 	}
-
 
 	public function testDeterminant() {
 		$this->Matrix->set($this->examples1x1);
@@ -230,7 +223,6 @@ class MatrixLibTest extends CakeTestCase {
 		pr($is);
 		$this->assertEquals($is, $expected);
 	}
-
 
 /** End **/
 

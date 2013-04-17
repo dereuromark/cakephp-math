@@ -11,7 +11,7 @@ class MathLib {
 	 * @param int $number (>= 0)
 	 * 2010-11-20 ms
 	 */
-	public function factorize ($number, $sortDesc = false) {
+	public static function factorize ($number, $sortDesc = false) {
 		if ($number < 2) {
 			return array($number);
 		}
@@ -38,7 +38,7 @@ class MathLib {
 	 * //FIXME!!! O(n^2) to O(log n)?
 	 * 2010-07-05 ms
 	 */
-	public function isPrime($number) {
+	public static function isPrime($number) {
 		/*
 		$limit = round(sqrt($number));
 		$counter = 2;
@@ -71,7 +71,7 @@ class MathLib {
 		return false;
 	}
 
-	public function findPrimes($limit = 100) {
+	public static function findPrimes($limit = 100) {
 		$sqrt = sqrt($limit);
 		$isPrime = array_fill(0, $limit + 1, false);
 
@@ -125,26 +125,26 @@ class MathLib {
 	 * //TODO: test
 	 * 2010-07-05 ms
 	 */
-	public function factorial($num) {
+	public static function factorial($num) {
 		if ($num <= 1) {
 			return 1;
 		}
 		return $num * self::factorial($num - 1);
 	}
 
-	public function doubleFactorial($num) {
+	public static function doubleFactorial($num) {
 		//TODO
 	}
 
-	public function multiFactorial($num, $fac) {
+	public static function multiFactorial($num, $fac) {
 		//TODO
 	}
 
-	public function superFactorial($num, $fac) {
+	public static function superFactorial($num, $fac) {
 		//TODO
 	}
 
-	public function hyperFactorial($num, $fac) {
+	public static function hyperFactorial($num, $fac) {
 		//TODO
 	}
 
@@ -154,7 +154,7 @@ class MathLib {
 	 * @return int
 	 * 2010-11-17 ms
 	 */
-	public function crossTotal($num) {
+	public static function crossTotal($num) {
 		$num = preg_split('//', (String)(int)$num, -1, PREG_SPLIT_NO_EMPTY);
 		$res = 0;
 		foreach ($num as $char) {
@@ -167,7 +167,7 @@ class MathLib {
 	 * Resolve The Ecuation Ax² + Bx + C = 0
 	 * 2010-11-17 ms
 	 */
-	public function equation($A, $B, $C) {
+	public static function equation($A, $B, $C) {
 		//$Result = false;
 		$Discriminant = pow($B, 2) - (4 * $A * $C);
 		$RealPart = (0 - $B) / 2 * $A;
@@ -189,7 +189,7 @@ class MathLib {
 	 * @return True if the number is even, false otherwise
 	 * 2010-11-17 ms
 	 */
-	public function isEven($num) {
+	public static function isEven($num) {
 		if (($num % 2) === 0) {
 			return true;
 		}
@@ -206,7 +206,7 @@ class MathLib {
 	 * @static
 	 * 2010-07-05 ms
 	 */
-	public function ackermann($n, $m) {
+	public static function ackermann($n, $m) {
 		if ($n == 0) {
 			return $m + 1;
 		} elseif ($m == 0) {

@@ -14,7 +14,7 @@ class EquationLibTest extends MyCakeTestCase {
 	}
 
 	public function testObject() {
-		$this->assertTrue(is_a($this->EquationLib, 'EquationLib'));
+		$this->assertInstanceOf('EquationLib', $this->EquationLib);
 	}
 
 	public function testX() {

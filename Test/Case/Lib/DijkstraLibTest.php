@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.DijkstraLib');
+App::uses('DijkstraLib', 'Math.Lib');
 
 /**
  * testing
@@ -9,7 +9,7 @@ App::import('Lib', 'Math.DijkstraLib');
 class DijkstraLibTest extends CakeTestCase {
 	public $Chmod = null;
 
-	public function startTest() {
+	public function setUp() {
 		//$this->Chmod = new MathLib();
 	}
 

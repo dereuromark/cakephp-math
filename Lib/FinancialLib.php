@@ -1,10 +1,8 @@
 <?php
 
-
 class FinancialLib {
 
-
-	public function arithmeticMean($values = array()) {
+	public static function arithmeticMean($values = array()) {
 		$sum = 0;
 		if (empty($values)) {
 			return $sum;
@@ -15,8 +13,7 @@ class FinancialLib {
 		return $sum/count($values);
 	}
 
-
-	public function geometricMean($values = array()) {
+	public static function geometricMean($values = array()) {
 		$product = 1;
 		if (empty($values)) {
 			return 0;
@@ -27,8 +24,4 @@ class FinancialLib {
 		return sqrt($product);
 	}
 
-
 }
-
-
-

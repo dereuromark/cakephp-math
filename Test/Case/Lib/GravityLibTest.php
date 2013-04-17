@@ -1,6 +1,6 @@
 <?php
 
-App::import('Lib', 'Math.GravityLib');
+App::uses('GravityLib', 'Math.Lib');
 
 /**
  * testing
@@ -9,7 +9,7 @@ App::import('Lib', 'Math.GravityLib');
 class GravityLibTest extends CakeTestCase {
 	public $Gravity = null;
 
-	public function startTest() {
+	public function setUp() {
 		$this->Gravity = new GravityLib();
 	}
 
