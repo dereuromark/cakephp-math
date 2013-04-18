@@ -8,9 +8,14 @@ Experiments mainly. Feel free to contribute.
 
 2.x
 
+## Installation
+
+* Clone/Copy the files in this directory into `app/Plugin/Math`
+* Don't forget to include the plugin in your bootstrap's `CakePlugin::load()` statement or use `CakePlugin::loadAll()`
+
 ## Dependencies ##
 
-none
+Possibly my Tools Plugin (for tests and controller access for example)
 
 ## License ##
 
