@@ -1,0 +1,21 @@
+{
+	"name": "dereuromark/cakephp-math",
+	"type": "cakephp-plugin",
+	"description": "A CakePHP plugin containing lots of useful math tools",
+	"keywords": ["cakephp", "plugin", "math"],
+	"homepage": "https://github.com/dereuromark/cakephp-math",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mark Scherer",
+			"homepage": "http://www.dereuromark.de"
+		}
+	],
+	"require": {
+		"php": ">=5.3",
+		"composer/installers": "*"
+	},
+	"extra": {
+		"installer-name": "Math"
+	}
+}
